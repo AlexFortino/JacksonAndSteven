@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Sand box.unity
+    guid: ce31c6a169e64f9448fd6548a6f4b462
+  - enabled: 1
     path: Assets/Scenes/SpaceShip.unity
     guid: e93390c8567b5a940a942dbb30793194
   - enabled: 1
