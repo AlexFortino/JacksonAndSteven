@@ -16,13 +16,16 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        Debug.Log((Vector3.Distance(transform.position, target.transform.position)));
+        
+            //GetComponent<NavMeshAgent>().SetDestination(target.transform.position);
+            Debug.Log((Vector3.Distance(transform.position, target.transform.position)));
         if (Vector3.Distance(transform.position, target.transform.position) < stopDistance)
         {
             GetComponent<NavMeshAgent>().isStopped = true;
         }
-        else { GetComponent<NavMeshAgent>().SetDestination(target.transform.position);
+        else
+        {
+            GetComponent<NavMeshAgent>().SetDestination(target.transform.position);
             GetComponent<NavMeshAgent>().isStopped = false;
         }
     }
