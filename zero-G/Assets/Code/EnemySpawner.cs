@@ -25,7 +25,7 @@ public class EnemySpawner : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.DownArrow)) 
         {
-            Instantiate(target);
+            Instantiate(target,transform);
         }
 
     }
