@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6728449760494259760}
   - component: {fileID: 6728449760494259763}
   - component: {fileID: 6728449760494259762}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6728449760494259773}
   m_LocalRotation: {x: 0, y: 0, z: 0.7252467, w: 0.68848914}
-  m_LocalPosition: {x: -0.017999649, y: -0.06700003, z: 0.3806514}
+  m_LocalPosition: {x: -0.017, y: -0.06700003, z: -0.484}
   m_LocalScale: {x: 0.13981739, y: 0.19364008, z: -0.77588046}
   m_Children: []
   m_Father: {fileID: 6728449761518024630}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 6728449760830357759}
   - component: {fileID: 6728449760830357758}
   - component: {fileID: 6728449760830357753}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: eyeball (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6728449760830357752}
   m_LocalRotation: {x: 0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1630001, y: 0.18400002, z: 0.3947496}
+  m_LocalPosition: {x: 0.164, y: 0.18400002, z: -0.474}
   m_LocalScale: {x: 0.21451467, y: 0.22861002, z: -0.7285669}
   m_Children: []
   m_Father: {fileID: 6728449761518024630}
@@ -156,7 +156,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 89681c510a2d4144f82986df469f44a1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -203,7 +203,9 @@ GameObject:
   - component: {fileID: 6728449761518024625}
   - component: {fileID: 6728449761518024624}
   - component: {fileID: 6728449761518024627}
-  m_Layer: 0
+  - component: {fileID: 566715560}
+  - component: {fileID: 566715561}
+  m_Layer: 3
   m_Name: target
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -289,6 +291,42 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &566715560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728449761518024626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 006ffde98a0191a44a3759374260d8ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  stopDistance: 1
+--- !u!195 &566715561
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728449761518024626}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5000001
+  m_Speed: 10
+  m_Acceleration: 10
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 5
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &6728449762158943102
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,7 +339,7 @@ GameObject:
   - component: {fileID: 6728449762158943101}
   - component: {fileID: 6728449762158943100}
   - component: {fileID: 6728449762158943103}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: eyeball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,7 +354,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6728449762158943102}
   m_LocalRotation: {x: 0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.21299982, y: 0.18400002, z: 0.3947496}
+  m_LocalPosition: {x: -0.212, y: 0.18400002, z: -0.474}
   m_LocalScale: {x: 0.21451467, y: 0.22861002, z: -0.7285669}
   m_Children: []
   m_Father: {fileID: 6728449761518024630}
@@ -349,7 +387,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 89681c510a2d4144f82986df469f44a1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
