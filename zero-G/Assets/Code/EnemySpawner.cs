@@ -19,7 +19,9 @@ public class EnemySpawner : MonoBehaviour
     {
 
 
-        if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
+        if (OVRInput.GetDown(OVRInput.RawButton.LHandTrigger))
+
+
         {
             Instantiate(target);
         }

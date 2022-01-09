@@ -23,6 +23,12 @@ public class gun : MonoBehaviour
             Instantiate(Bullet, muzzle.transform.position, muzzle.transform.rotation);
 
 }
-}
+        if (Input.GetMouseButtonDown(0))
+
+        {
+            Instantiate(Bullet, muzzle.transform.position, muzzle.transform.rotation);
+
+        }
+    }
 
 }
