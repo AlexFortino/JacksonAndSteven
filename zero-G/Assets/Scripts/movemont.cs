@@ -27,7 +27,8 @@ using UnityEngine;
         cam.transform.eulerAngles = new Vector3(vericle, horizontil, 0);
 
         dir = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
-
+        rb.AddRelativeForce(Vector3.forward * dir.y);
+        rb.AddRelativeForce(Vector3.right * dir.x);
         if (Input.GetKey(KeyCode.W))
         {
             //transform.Translate(Vector3.forward * speed * Time.deltaTime);
