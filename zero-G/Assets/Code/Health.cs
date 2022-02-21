@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
+    public bool isEnemy = false;
     GameObject healthBar;
     public int health = 5;
     // Start is called before the first frame update
@@ -20,7 +21,12 @@ public class Health : MonoBehaviour
     public void takeDamage(int dmg)
     {
         health = health - dmg;
-        healthBar.GetComponent<Text>().text=health.ToString();
+       if (!isEnemy)
+        {
+            Debug.Log(health);
+            healthBar.GetComponent<Text>().text=health.ToString();
+        }
+       
         if (health <= 0)
         {
             Debug.Log("you are dead");

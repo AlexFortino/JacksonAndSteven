@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: c963a039fe42340418a45f05262504ae, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -215,6 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe489ef8f0ba551429cb8734831a2bc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEnemy: 0
   health: 5
 --- !u!1 &53098467
 GameObject:
@@ -1178,17 +1179,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 566715560, guid: da174ad4a0f176c48bf5ee913355671b, type: 3}
-      propertyPath: stopDistance
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 6728449761518024626, guid: da174ad4a0f176c48bf5ee913355671b, type: 3}
       propertyPath: m_Name
       value: target
-      objectReference: {fileID: 0}
-    - target: {fileID: 6728449761518024626, guid: da174ad4a0f176c48bf5ee913355671b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6728449761518024630, guid: da174ad4a0f176c48bf5ee913355671b, type: 3}
       propertyPath: m_RootOrder
