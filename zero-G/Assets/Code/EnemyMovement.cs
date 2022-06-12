@@ -29,23 +29,51 @@ public class EnemyMovement : MonoBehaviour
         if (!ifDead)
         {
             //GetComponent<NavMeshAgent>().SetDestination(target.transform.position);
-            Debug.Log((Vector3.Distance(transform.position, target.transform.position)));
-            if (Vector3.Distance(transform.position, target.transform.position) < stopDistance)
+            //Debug.Log((Vector3.Distance(transform.position, target.transform.position)));
+            //if (Vector3.Distance(transform.position, target.transform.position) < stopDistance)
+            //{
+            //    GetComponent<NavMeshAgent>().isStopped = true;
+            //    if (canAttack)
+            //    {
+            //        target.GetComponent<Health>().takeDamage(1);
+            //        canAttack = false;
+            //        Invoke("AttackCooldown", 3);
+            //    }
+            //}
+            //else
+            //{
+            //    GetComponent<NavMeshAgent>().SetDestination(target.transform.position);
+            //    GetComponent<NavMeshAgent>().isStopped = false;
+            //}
+            //Debug.Log((Vector3.Distance(transform.position, target.transform.position)));
+            RaycastHit hit;
+            int layermask = 1 << 3;
+            layermask = ~layermask;
+            Vector3 direction = target.transform.position - transform.position;
+            if (Vector3.Distance(transform.position, target.transform.position) < stopDistance && Physics.Raycast(transform.position, direction, out hit,Mathf.Infinity,layermask))
             {
-                GetComponent<NavMeshAgent>().isStopped = true;
-                if (canAttack)
+                if (hit.collider.gameObject.name == "body")
                 {
-                    target.GetComponent<Health>().takeDamage(1);
-                    canAttack = false;
-                    Invoke("AttackCooldown", 3);
+                        GetComponent<NavMeshAgent>().isStopped = true;
+                    transform.LookAt(target.transform.position);
+                    Debug.Log("hit the player");
+                    Debug.DrawRay(transform.position, direction * hit.distance, Color.red);
+                    Debug.Log(hit.collider.gameObject.name);
+                    if (canAttack)
+                    {
+                        target.GetComponent<Health>().takeDamage(1);
+                        canAttack = false;
+                        Invoke("AttackCooldown", 3);
+                    }
                 }
+               
+               
             }
             else
             {
                 GetComponent<NavMeshAgent>().SetDestination(target.transform.position);
                 GetComponent<NavMeshAgent>().isStopped = false;
             }
-           
         }
     }
     void AttackCooldown()
