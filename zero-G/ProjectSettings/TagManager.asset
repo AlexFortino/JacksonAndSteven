@@ -9,6 +9,7 @@ TagManager:
   - Ammo UI
   - Objective UI
   - Gun
+  - TimerUI
   layers:
   - Default
   - TransparentFX
